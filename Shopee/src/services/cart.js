@@ -4,22 +4,31 @@
 // CASOS DE USO - Cada uma com uma função:
 
 // Adicionar item do carrinho
-async function addItem(userCard) {
-    
+// userCart é um vetor
+// Push adiciona um elemento dentro do vetor
+async function addItem(userCart, item) {
+    userCart.push(item);
+}
+
+// Calcular o Total do carrinho
+async function calculateTotal(userCart) {
+    return userCart.reduce((total, item) => total + item.subtotal());
 }
 
 // Deletar item do carrinho
-async function deleteItem(userCard, name) {
+async function deleteItem(userCart, name) {
 
 }
 
 // Remover item do carrinho - Apenas diminuindo um item
-async function removeItem(userCard, index) {
+async function removeItem(userCart, index) {
 
 }
 
-// Calcular o Total do carrinho
-async function calculateTotal(userCard) {
-
+export {
+    addItem,
+    calculateTotal,
+    deleteItem,
+    removeItem
 }
 
