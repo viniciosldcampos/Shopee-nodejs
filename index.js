@@ -1,15 +1,25 @@
-// Como o arquivo package.json está como o ESM a importação precisa do caminho colocando item.js. 
+// Como o arquivo package.json está como o ESM a importação precisa do caminho colocando a extensão js no final. 
+import * as cartService from "./Shopee/src/services/cart.js"
 import createItem from "./Shopee/src/services/item.js"; 
 
-const cart = [];
+
+// Vetor do carrinho de compras. 
+const myCart = []; 
+// Vetor da Lista de desejos. 
+const myWhishList = [];
 
 console.log("Welcome to the your Shopee!");
 
-// Criação dos itens do carrinho com o preço e a quantidade. 
+// Criação dos itens com o nome do produto, preço e a quantidade. 
 // await usado para que haja uma espera para o item terminar de executar para continuar o código. Não executando tudo ao mesmo tempo.
 const item1 = await createItem("Ferrari, 20.99, 1");
 const item2 = await createItem("McLaren, 39.99, 3");
 
+// Adicionando os itens abaixo no carrinho. 
+await cartService.addItem(myCart, item1);
+await cartService.addItem(myWhishList, item2);
+
 // Calculo do item a partir da função de subtotal. 
-console.log(item2.subtotal());
+console.log("The total purchase is:");
+await cartService.calculateTotal(myCart);
 
