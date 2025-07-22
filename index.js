@@ -17,7 +17,12 @@ const item2 = await createItem("McLaren, 39.99, 3");
 
 // Adicionando os itens abaixo no carrinho. 
 await cartService.addItem(myCart, item1);
-await cartService.addItem(myWhishList, item2);
+await cartService.addItem(myCart, item2);
+await cartService.addItem(myWhishList, item3);
+
+//  Removeu o item abaixo do carrinho.
+// O vetor começa do zero, portanto, nesse caso ele vai excluir o item 2
+await cartService.removeItem(myCart, 1);
 
 // Exibição da mensagem com o nome do produto, quantidade e valor subtotal. 
 await cartService.displaycart(myCart);
