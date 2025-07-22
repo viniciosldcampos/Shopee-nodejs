@@ -20,9 +20,10 @@ await cartService.addItem(myCart, item1);
 await cartService.addItem(myCart, item2);
 await cartService.addItem(myWhishList, item3);
 
-//  Removeu o item abaixo do carrinho.
-// O vetor começa do zero, portanto, nesse caso ele vai excluir o item 2
-await cartService.removeItem(myCart, 1);
+// //  Removeu o item abaixo do carrinho.
+// // O vetor começa do zero, portanto, nesse caso ele vai excluir o item 2
+// await cartService.removeItem(myCart, 1);
+await cartService.removeItem(myCart, item1);
 
 // Exibição da mensagem com o nome do produto, quantidade e valor subtotal. 
 await cartService.displaycart(myCart);

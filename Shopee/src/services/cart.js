@@ -28,16 +28,28 @@ async function deleteItem(userCart, name) {
 }
 
 // Remover item do carrinho - Apenas diminuindo um item
-async function removeItem(userCart, index) {
-    // Transforma o indice visual do usuário, para o indice do backend
-    const deleteItem = index - 1;
-    // É maior do que zero e se é menor do que o tamanho do carrinho
-    if(index >= 0 && index < userCart.length) {
-        userCart.splice(deleteItem, 1);
+async function removeItem(userCart, item) {
+    // Encontrar o índice do item
+    const indexFound = userCart.findIndex((p) => p.name === item.name);
+
+    // Caso não encontre o item
+    if(indexFound == -1) {
+        console.log("item não encontrado");
+        return;
+    }
+    // Caso o Item > 1 subtrair um item.
+    if(userCart[indexFound].quantity > 1) {
+        userCart[indexFound].quantity -= 1;
+        return;
+    }
+    // Caso o item = 1 deletar o item. 
+    if(userCart[indexFound].quantity == 1) {
+        userCart.splice(indexFound, 1);
+        return;
     }
 }
 
-// Remover item do carrinho - Apenas diminuindo um item
+// Função para exibir mensagem ao usuário
 async function displaycart(userCart) {
     console.log("\nShopee cart list:")
     userCart.forEach((item, index) => {
