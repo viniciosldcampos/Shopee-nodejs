@@ -19,11 +19,13 @@ const item2 = await createItem("McLaren, 39.99, 3");
 await cartService.addItem(myCart, item1);
 await cartService.addItem(myWhishList, item2);
 
-// Deletou os itens abaixo no carrinho. 
-await cartService.deleteItem(myCart, item2.name);
-await cartService.deleteItem(myCart, item1.name);
+// Exibição da mensagem com o nome do produto, quantidade e valor subtotal. 
+await cartService.displaycart(myCart);
+
+// // Deletou os itens abaixo no carrinho. 
+// await cartService.deleteItem(myCart, item2.name);
+// await cartService.deleteItem(myCart, item1.name);
 
 // Calculo do item a partir da função de subtotal. 
-console.log("The total purchase is:");
 await cartService.calculateTotal(myCart);
 
