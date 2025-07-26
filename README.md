@@ -25,7 +25,7 @@ Shopee-nodejs/
          └── item.js            # Função de criação de itens  
 
 ## 💡 Exemplo de Entrada
-```
+```js
 // Criação dos itens com o nome do produto, preço e a quantidade.
 const item1 = await createItem("Ferrari", 20.99, 1);
 const item2 = await createItem("McLaren", 39.99, 3);
@@ -39,6 +39,7 @@ await cartService.addItem(myWhishList, item3);
 // //  Removeu o item abaixo do carrinho.
 await cartService.removeItem(myCart, item1);
 ```
+
 ### OBS: Item 3 adicionado está na lista de desejo, portanto, não está no carrinho de compras, por este motivo não faz parte do valor total do carrinho.
 
 ## 💡 Exemplo de Saída
