@@ -24,6 +24,23 @@ Shopee-nodejs/
          ├── cart.js            # Lógica de operações do carrinho  
          └── item.js            # Função de criação de itens  
 
+## 💡 Exemplo de Entrada
+```
+// Criação dos itens com o nome do produto, preço e a quantidade.
+const item1 = await createItem("Ferrari", 20.99, 1);
+const item2 = await createItem("McLaren", 39.99, 3);
+const item3 = await createItem("McLaren", 39.99, 3);
+
+// Adicionando os itens abaixo no carrinho. 
+await cartService.addItem(myCart, item1);
+await cartService.addItem(myCart, item2);
+await cartService.addItem(myWhishList, item3);
+
+// //  Removeu o item abaixo do carrinho.
+await cartService.removeItem(myCart, item1);
+```
+### OBS: Item 3 adicionado está na lista de desejo, portanto, não está no carrinho de compras, por este motivo não faz parte do valor total do carrinho.
+
 ## 💡 Exemplo de Saída
 ```
 Welcome to the your Shopee!
