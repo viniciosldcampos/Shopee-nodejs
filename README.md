@@ -16,13 +16,13 @@ Este é um projeto simples de simulação de um carrinho de compras usando Node.
 - Terminal ou prompt de comando
 
 ## 📁 Estrutura do Projeto
-Shopee-nodejs/
-├── index.js                   # Arquivo principal da aplicação  
-├── package.json               # Arquivo de configuração do projeto (com "type": "module")  
-└── src/  
-    └── services/  
-        ├── cart.js            # Lógica de operações do carrinho  
-        └── item.js            # Função de criação de itens  
+Shopee-nodejs/  
+├── index.js                   # Arquivo principal da aplicação    
+  ├── package.json               # Arquivo de configuração do projeto (com "type": "module")  
+    └── src/  
+      └── services/  
+         ├── cart.js            # Lógica de operações do carrinho  
+         └── item.js            # Função de criação de itens  
 
 ## 💡 Exemplo de Saída
 ```
